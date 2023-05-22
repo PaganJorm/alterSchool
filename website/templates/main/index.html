@@ -1,0 +1,37 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Django Tailwind</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+		
+        <div id="main" class="flex flex-col h-screen">
+
+			<div
+				id="titleBar"
+				class="bg-sky-700 text-[#F5F5F5] h-[15%] flex flex-row justify-center space-x-9 text-5xl"
+			>
+
+				<a href="{% url 'news' %}" class="my-auto"> News </a>
+
+				<a href="{% url 'documents' %}" class="my-auto"> Circolari </a>
+
+				<a href="orientamento" class="my-auto"> Orientamento </a>
+			
+            </div>
+
+			<div id="content" class="h-[85%] mt-14 text-3xl">
+				{% block documents %}{% endblock documents %} 
+				{% block news %}{% endblock news %}
+			</div>
+
+		</div>
+
+	</body>
+</html>

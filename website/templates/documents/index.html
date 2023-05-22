@@ -1,0 +1,15 @@
+{% extends '../main/index.html' %}
+
+{% block documents %}
+    <div class="mx-64">
+        <p>documents</p>
+        {% for key1, nested_dict in result.items %}
+        {% for nested_key, value in nested_dict.items %}
+            {% if nested_key == "_id" %}
+            {% else %}
+                <p>{{value}}</p>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% endblock documents %}
